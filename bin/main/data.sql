@@ -1,2 +1,0 @@
-insert into ACCOUNT values('test',1,'테스트','test@test.com','남','010-1111-1111','1234','dong','chat');
-insert into ACCOUNT values('aaaa',2,'테스트','test@test.com','남','010-1111-1111','1234','dong','chat');

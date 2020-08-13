@@ -4,16 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.randomchat.randomchat.dao.MemberDao;
-import com.randomchat.randomchat.repository.MemberRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class MemberService {
-    @Autowired
-    private MemberRepository repository;
-
     @Autowired
     private MemberDao dao;
     
