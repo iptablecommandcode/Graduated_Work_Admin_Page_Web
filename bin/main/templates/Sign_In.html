@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- call bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+
+    <!-- w3 -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <!-- title -->
+    <title>RandomChat AdminPage</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <!-- center -->
+    <div class="container pb-5">
+        <!-- title -->
+        <div class="pb-5 pt-5 d-flex justify-content-center">
+            <p class="display-2 font-weight-bold">RandomChat AdminPage</p>
+        </div>
+        <!-- account -->
+        <form action="/Index" method="POST">
+            <div class="row d-flex justify-content-center">
+                <div class="justify-content-center">
+                    <!-- id -->
+                    <span class="d-flex justify-content-center mt-5 mb-5">
+                        <i style='font-size:24px' class="fas fa-user"></i>
+                        <label class="m-1 mr-5">아이디</label>
+                    </span>
+                    <!-- pw -->
+                    <span class="d-flex justify-content-center mt-5 mb-5">
+                        <i style='font-size:24px' class="fas fa-lock icon"></i>
+                        <label class="m-1 mr-5">비밀번호</label>
+                    </span>
+                </div>
+
+                <div class="justify-content-center">
+                    <!-- id input -->
+                    <span class="d-flex justify-content-center mt-5 mb-5">
+                        <input type="text" class="" name="ID">
+                    </span>
+                    <!-- pw input -->
+                    <span class="d-flex justify-content-center mt-5 mb-5">
+                        <input type="password" class="" name="PW">
+                    </span>
+                </div>
+            </div>
+
+            <!-- Sign In button -->
+            <div class="m-5 d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary p-2 pl-5 pr-5">
+                    <div class="row">
+                        <i class="fas fa-lock icon"></i>
+                        <p class="ml-3 mb-0 font-weight-bold">
+                            Sign In
+                        </p>
+                    </div>
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+<footer>
+
+</footer>
+
+</html>

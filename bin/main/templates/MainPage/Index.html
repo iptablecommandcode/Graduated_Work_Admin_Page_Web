@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- call bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- w3 -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <!-- title -->
+    <title>RandomChat AdminPage</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-primary text-light">
+        <a class="navbar-brand text-light" href="#">Admin Page</a>
+        <div class="row">
+            <span class="navbar-text text-light font-weight-bold">
+                <p class="m-0" th:text="${session.id} + '님 로그인중입니다.'"></p>
+            </span>
+            <div class="dropdown ml-3 mt-1 mr-3">
+                <button class="btn  fa fa-user text-light" type="button" data-toggle="dropdown">
+                </button>
+                <div class="dropdown-menu dropdown-menu-lg-right">
+                    <a class="dropdown-item" href="/SignOut">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div>
+            <p class="font-weight-bold display-4 mt-5">계정 관리</p>
+        </div>
+        <!-- select -->
+        <div class="mb-3 mt-5">
+            <form class="form-inline my-2 my-lg-0 d-flex justify-content-end" method="GET" action="/MainPage/Search">
+                <!--add thymeleaf-->
+                <select class="custom-select mr-2" name="title">
+                    <!-- add values-->
+                    <option selected>선택</option>
+                    <option value="ID">아이디</option>
+                    <option value="NAME">이름</option>
+                    <option value="GENDER">성별</option>
+                    <option value="PHONE">핸드폰</option>
+                    <option value="EMAIL">이메일</option>
+                    <option value="SCHOOL">학교정보</option>
+                </select>
+                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- table print -->
+        <div>
+            <form>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">아이디</th>
+                            <th scope="col">이름</th>
+                            <th scope="col">성별</th>
+                            <th scope="col">핸드폰</th>
+                            <th scope="col">이메일</th>
+                            <th scope="col">학교정보</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="resultData: ${resultMap.resultList}">
+                            <td>
+                                <button type="submit" name="search" class="bg-transparent border-0 w-100 m-0"
+                                    formaction="/MainPage/AccountInfo" formmethod="GET" th:value="${resultData.ID}"
+                                    th:text=${resultData.ID}></button>
+                            </td>
+                            <td>
+                                <button type="submit" name="search" class="bg-transparent border-0 w-100 m-0"
+                                    formaction="/MainPage/AccountInfo" formmethod="GET" th:value="${resultData.ID}"
+                                    th:text=${resultData.NAME}></button>
+                            </td>
+                            <td>
+                                <button type="submit" name="search" class="bg-transparent border-0 w-100 m-0"
+                                    formaction="/MainPage/AccountInfo" formmethod="GET" th:value="${resultData.ID}"
+                                    th:text=${resultData.GENDER}></button>
+                            </td>
+                            <td>
+                                <button type="submit" name="search" class="bg-transparent border-0 w-100 m-0"
+                                    formaction="/MainPage/AccountInfo" formmethod="GET" th:value="${resultData.ID}"
+                                    th:text=${resultData.PHONE}></button>
+                            </td>
+                            <td>
+                                <button type="submit" name="search" class="bg-transparent border-0 w-100 m-0"
+                                    formaction="/MainPage/AccountInfo" formmethod="GET" th:value="${resultData.ID}"
+                                    th:text=${resultData.EMAIL}></button>
+                            </td>
+                            <td>
+                                <button type="submit" name="search" class="bg-transparent border-0 w-100 m-0"
+                                    formaction="/MainPage/AccountInfo" formmethod="GET" th:value="${resultData.ID}"
+                                    th:text=${resultData.SCHOOL}></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+<footer class="text-center border-top border-secondary" style="margin-top:300px">
+    동서울대학교 컴퓨터 소프트웨어과 7조 박치원, 이종운, 조상윤, 김용진
+    <p style="font-size:5px;">경기도 성남시 수정구 복정로 76</p>
+</footer>
+
+</html>

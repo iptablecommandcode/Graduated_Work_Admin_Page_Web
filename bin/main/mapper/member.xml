@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+
+	<select id="login" resultType="String" parameterType="Map">
+		select ID
+		from ACCOUNT
+		where ID=#{ID}
+		and PASSWORD=#{PASSWORD}
+		and ADMIN=1;
+	</select>
+
+	<select id="search" resultType="MAP" parameterType="Map">
+		select ID,NAME,GENDER,PHONE,EMAIL,SCHOOL
+		from ACCOUNT;
+	</select>
+
+	<select id="searchid" resultType="MAP" parameterType="Map">
+		select ID,NAME,GENDER,PHONE,EMAIL,SCHOOL
+		from ACCOUNT
+		where ID=#{SEARCH};
+	</select>
+
+	<select id="searchname" resultType="MAP" parameterType="Map">
+		select ID,NAME,GENDER,PHONE,EMAIL,SCHOOL
+		from ACCOUNT
+		where NAME=#{SEARCH};
+	</select>
+
+	<select id="searchgender" resultType="MAP" parameterType="Map">
+		select ID,NAME,GENDER,PHONE,EMAIL,SCHOOL
+		from ACCOUNT
+		where GENDER=#{SEARCH};
+	</select>
+
+	<select id="searchphone" resultType="MAP" parameterType="Map">
+		select ID,NAME,GENDER,PHONE,EMAIL,SCHOOL
+		from ACCOUNT
+		where PHONE=#{SEARCH};
+	</select>
+
+	<select id="searchemail" resultType="MAP" parameterType="Map">
+		select ID,NAME,GENDER,PHONE,EMAIL,SCHOOL
+		from ACCOUNT
+		where EMAIL=#{SEARCH};
+	</select>
+
+	<select id="searchschool" resultType="MAP" parameterType="Map">
+		select ID,NAME,GENDER,PHONE,EMAIL,SCHOOL
+		from ACCOUNT
+		where SCHOOL=#{SEARCH};
+	</select>
+
+	<select id="memberinfo" resultType="MAP" parameterType="Map">
+		select ID,NAME,GENDER,PHONE,EMAIL,SCHOOL
+		from ACCOUNT
+		where ID=#{SEARCH};
+	</select>
+	
+	<delete id="delete" parameterType="Map">
+		
+	</delete>
+</mapper>
