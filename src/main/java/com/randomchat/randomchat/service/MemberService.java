@@ -20,4 +20,10 @@ public class MemberService {
         dataMap.put("PASSWORD", password);
         return dao.getObject(sqlMapId, dataMap);
     }
+    public void Delete(String Delete){
+        final String sqlMapId = "member.delete";
+        final Map<String, String> dataMap = new HashMap<String, String>();
+        dataMap.put("SEARCH", Delete);
+        dao.deleteObject(sqlMapId, dataMap);
+    }
 }

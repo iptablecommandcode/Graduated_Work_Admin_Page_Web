@@ -33,7 +33,7 @@ public class IndexController {
     }
 
     // SIGN IN CHECK
-    @PostMapping("/Index")
+    @PostMapping("/MainPage/Index")
     public ModelAndView SignIN(@RequestParam Map<String,Object> paramMap, HttpServletRequest requset, HttpSession session,ModelAndView modelAndView){
         // search data
         String loginID = requset.getParameter("ID");

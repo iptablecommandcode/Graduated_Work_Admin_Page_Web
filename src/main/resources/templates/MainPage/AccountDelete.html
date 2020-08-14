@@ -28,7 +28,7 @@
 
 <body>
     <nav class="navbar navbar-light bg-primary text-light">
-        <a class="navbar-brand text-light" href="#">Admin Page</a>
+        <a class="navbar-brand text-light" href="/MainPage/Index">Admin Page</a>
         <div class="row">
             <span class="navbar-text text-light font-weight-bold">
                 <p class="m-0" th:text="${session.id} + '님 로그인중입니다.'"></p>
@@ -44,7 +44,7 @@
     </nav>
     <div class="container">
         <!-- add thymeleaf -->
-        <form action="#" method="POST">
+        <form>
             <!-- Delete Account ID value -->
             <input type="hidden" name="ID">
             <div>
@@ -52,16 +52,14 @@
             </div>
             <!-- final show -->
             <div class="d-flex justify-content-center">
-                <!-- add thymeleaf -->
-                <span>[아이디]</span>
-                <p>
-                    의 정보를 삭제하시겠습니까?
-                </p>
+                <p th:text="${resultMap.ID} + '의 정보를 삭제하시겠습니까?'"></p>
             </div>
             <!-- button -->
             <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary m-5">예</button>
-                <button type="button" id="back" class="btn btn-danger m-5">아니오</button>
+                <button type="submit" class="btn btn-primary m-5" formaction="/DeleteAction" formmethod="GET"
+                    th:value="${resultMap.ID}" name="search">예</button>
+                <button type="submit" class="btn btn-danger m-5" formaction="/MainPage/AccountInfo"
+                    formmethod="GET" th:value="${resultMap.ID}" name="search">아니오</button>
             </div>
         </form>
     </div>
