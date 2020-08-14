@@ -46,6 +46,7 @@ public class IndexController {
         
         if (loginID == null) {
             // Sign Fail
+            viewName = "/Sign_in";
             modelAndView.setViewName(viewName);
             return modelAndView;
         } else {
