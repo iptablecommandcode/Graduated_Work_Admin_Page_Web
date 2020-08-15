@@ -33,12 +33,12 @@ public class IndexController {
     }
 
     // SIGN IN CHECK
-    @PostMapping("/MainPage/Index")
+    @PostMapping("MainPage/Index")
     public ModelAndView SignIN(@RequestParam Map<String,Object> paramMap, HttpServletRequest requset, HttpSession session,ModelAndView modelAndView){
         // search data
         String loginID = requset.getParameter("ID");
         String loginPW = requset.getParameter("PW");
-        String viewName = "/MainPage/Index";
+        String viewName = "MainPage/Index";
         Object resultMap = new HashMap<String, Object>() ;
 
         // SIGN IN CHECK
@@ -46,7 +46,7 @@ public class IndexController {
         
         if (loginID == null) {
             // Sign Fail
-            viewName = "/Sign_in";
+            viewName = "Sign_in";
             modelAndView.setViewName(viewName);
             return modelAndView;
         } else {
@@ -64,7 +64,7 @@ public class IndexController {
     }
 
     // SIGN OUT GET
-    @GetMapping("/SignOut")
+    @GetMapping("SignOut")
     public String SignOutGet(HttpSession session, SessionStatus status) {
         // Session Out
         if(status.isComplete()){
@@ -74,7 +74,7 @@ public class IndexController {
     }
 
     // SIGN OUT POST
-    @PostMapping("/SignOut")
+    @PostMapping("SignOut")
     public String SignOutPost(HttpSession session, SessionStatus status) {
         // Session Out
         if(status.isComplete()){

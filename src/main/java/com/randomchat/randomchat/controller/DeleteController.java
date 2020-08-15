@@ -14,7 +14,7 @@ public class DeleteController {
     @Autowired
     MemberService memberservice;
 
-    @GetMapping("/DeleteAction")
+    @GetMapping("DeleteAction")
     public String Delete(@RequestParam Map<String, Object> paramMap) {
         String Search = (String) paramMap.get("search");
 

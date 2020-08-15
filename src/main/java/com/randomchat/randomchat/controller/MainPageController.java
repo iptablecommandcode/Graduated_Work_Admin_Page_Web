@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainPageController {
 
-    private final static String MAPPING = "/MainPage/";
+    private final static String MAPPING = "MainPage/";
 
     @Autowired
     private SearchService searchservice;
