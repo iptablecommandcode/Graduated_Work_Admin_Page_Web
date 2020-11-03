@@ -1,4 +1,4 @@
-package com.randomchat.randomchat.controller;
+package com.randomchat.randomchat.controller.web_controller;
 
 import java.util.HashMap;
 import java.util.Map;

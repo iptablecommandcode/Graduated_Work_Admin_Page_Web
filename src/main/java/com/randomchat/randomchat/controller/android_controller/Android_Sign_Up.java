@@ -1,4 +1,4 @@
-package com.randomchat.randomchat.controller;
+package com.randomchat.randomchat.controller.android_controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,19 +13,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class Android_Sign_In {
+public class Android_Sign_Up {
     @Autowired
     private MemberService memberservice;
 
-    @RequestMapping("Android")
+    @RequestMapping("AndroidSign_Up")
     @ResponseBody
     public Map<String, String> SignIn(HttpServletRequest request) {
     Map<String, String> result = new HashMap<String, String>();
-    //String test;
+    String test;
 
-    // test = request.getParameter("id");
-    // System.out.println(test);
-    result.put("Sign_In", "false");
+    test = request.getParameter("id");
+    System.out.println(test);
+    test = request.getParameter("pw");
+    System.out.println(test);
+
+    result.put("Sign_In", "true");
 
     return result;
     }
