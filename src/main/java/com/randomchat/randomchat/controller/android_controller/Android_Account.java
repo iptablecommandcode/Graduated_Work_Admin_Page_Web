@@ -13,19 +13,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class Android_Sign_Up {
+public class Android_Account {
     @Autowired
     private MemberService memberservice;
 
-    @RequestMapping("AndroidSign_Up")
+    private final static String MAPPING = "Account/";
+
+    // 계정 생성
+    @RequestMapping(value = MAPPING + "Sign_Up")
     @ResponseBody
-    public Map<String, String> SignIn(HttpServletRequest request) {
+    public Map<String, String> Sign_Up(HttpServletRequest request) {
     Map<String, String> result = new HashMap<String, String>();
     String test;
 
-    test = request.getParameter("id");
+    test = request.getParameter("ID");
     System.out.println(test);
-    test = request.getParameter("pw");
+    test = request.getParameter("NAME");
+    System.out.println(test);
+
+    result.put("Sign_In", "true");
+
+    return result;
+    }
+
+    //중복확인
+    @RequestMapping(value = MAPPING + "Search_ID")
+    @ResponseBody
+    public Map<String, String> Search_ID(HttpServletRequest request) {
+    Map<String, String> result = new HashMap<String, String>();
+    String test;
+
+    test = request.getParameter("ID");
+    System.out.println(test);
+    test = request.getParameter("NAME");
     System.out.println(test);
 
     result.put("Sign_In", "true");
