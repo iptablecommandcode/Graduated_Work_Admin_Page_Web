@@ -27,4 +27,10 @@ public class MemberDao {
 		Integer resultObject = sqlSession.delete(sqlMapId,dataMap);
 		return resultObject;
 	}
+
+	public Object insertList(String sqlMapId, Object dataMap){
+		Object resultObject = sqlSession.insert(sqlMapId, dataMap);
+
+		return resultObject;
+	}
 }

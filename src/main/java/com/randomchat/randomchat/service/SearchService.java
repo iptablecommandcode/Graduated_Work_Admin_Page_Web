@@ -18,7 +18,7 @@ public class SearchService {
   private MemberDao dao;
 
   public Object Search(Object dataMap) {
-    String sqlMapId = "search.search";
+    final String sqlMapId = "search.search";
 
     Object resultObject = new HashMap<>();
     ((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId, dataMap));
@@ -27,16 +27,16 @@ public class SearchService {
   }
 
   public Object SearchID(Object dataMap) {
-    String sqlMapId = "search.searchid";
+    final String sqlMapId = "search.searchid";
 
     Object resultObject = new HashMap<>();
-    ((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId, dataMap));
+    ((Map<String, Object>) resultObject).put("resultList", dao.getObject(sqlMapId, dataMap));
 
     return resultObject;
   }
 
   public Object SearchNAME(Object dataMap) {
-    String sqlMapId = "search.searchname";
+    final String sqlMapId = "search.searchname";
 
     Object resultObject = new HashMap<>();
     ((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId, dataMap));
@@ -45,7 +45,7 @@ public class SearchService {
   }
 
   public Object SearchGENDER(Object dataMap) {
-    String sqlMapId = "search.searchgender";
+    final String sqlMapId = "search.searchgender";
 
     Object resultObject = new HashMap<>();
     ((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId, dataMap));
@@ -54,7 +54,7 @@ public class SearchService {
   }
 
   public Object SearchPHONE(Object dataMap) {
-    String sqlMapId = "search.searchphone";
+    final String sqlMapId = "search.searchphone";
 
     Object resultObject = new HashMap<>();
     ((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId, dataMap));
@@ -63,7 +63,7 @@ public class SearchService {
   }
 
   public Object SearchEMAIL(Object dataMap) {
-    String sqlMapId = "search.searchemail";
+    final String sqlMapId = "search.searchemail";
 
     Object resultObject = new HashMap<>();
     ((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId, dataMap));
@@ -72,7 +72,7 @@ public class SearchService {
   }
 
   public Object SearchSCHOOL(Object dataMap) {
-    String sqlMapId = "search.searchschool";
+    final String sqlMapId = "search.searchschool";
 
     Object resultObject = new HashMap<>();
     ((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId, dataMap));
@@ -81,7 +81,7 @@ public class SearchService {
   }
 
   public Object MemberInfo(Object dataMap) {
-    String sqlMapId = "search.memberinfo";
+    final String sqlMapId = "search.memberinfo";
 
     Object resultObject = dao.getObject(sqlMapId, dataMap);
 

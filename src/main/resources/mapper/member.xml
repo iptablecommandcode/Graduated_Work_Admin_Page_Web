@@ -17,4 +17,28 @@
 	<delete id="delete" parameterType="Map">
 		delete from ACCOUNT where ID=#{SEARCH};
 	</delete>
+
+	<insert id="signup" parameterType="Map">
+	    insert into ACCOUNT (
+			ID,
+			ADMIN,
+			NAME,
+			PASSWORD,
+			GENDER,
+			PHONE,
+			EMAIL,
+			SCHOOL,
+			CHATTING
+			) VALUES (
+			#{ID},
+			#{ADMIN},
+			#{NAME},
+			#{PASSWORD},
+			#{GENDER},
+			#{PHONE},
+			#{EMAIL},
+			#{SCHOOL},
+			#{CHATTING}
+			)
+	</insert>
 </mapper>

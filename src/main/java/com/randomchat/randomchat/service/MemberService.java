@@ -26,4 +26,9 @@ public class MemberService {
         dataMap.put("SEARCH", Delete);
         dao.deleteObject(sqlMapId, dataMap);
     }
+    public void AddUser(Map<String,Object> dataMap){
+        final String sqlMapId = "member.signup";
+
+        dao.insertList(sqlMapId, dataMap);
+    }
 }
