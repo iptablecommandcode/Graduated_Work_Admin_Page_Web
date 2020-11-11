@@ -16,25 +16,34 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class Android_Chatting_Search {
     @Autowired
     private MemberService memberservice;
-
+    String user1=null,menu1=null,user2 = null, menu2 = null, menudump1 = null, menudump2 = null;
     @RequestMapping("Android_Chatting_Search")
     @ResponseBody
     public Map<String, String> SignIn(HttpServletRequest request) {
     Map<String, String> result = new HashMap<String, String>();
-    String user1,user2;
-
-    user1 = request.getParameter("id");
-    user2 = request.getParameter("id");
+    menudump1 = request.getParameter("id");
+    menudump2 = request.getParameter("menu");
+    if(user1 == null){
+        user1 = request.getParameter("id");
+        menu1 = request.getParameter("menu");
+        result.put("Search", "false");
+        return result;
+    }else if((user1 != null) && (user1.equals(menudump1))){
+        result.put("Search", "false");
+        return result;
+    }else if((user1 != null) && (!(user1.equals(menudump1)) && (menu1.equals(menudump2)))){
+        user2 = request.getParameter("id");
+        menu2 = request.getParameter("menu");
+        result.put("Search", "true");
+        return result;
+    }else{
+        result.put("Search","false");
+        return result;
+    }
 
     // while((user1.equals(null))||(user2.equals(null))){
     //     user1 = request.getParameter("id");
     //     user2 = request.getParameter("id");
     // }
-
-
-
-    result.put("Search", "true");
-
-    return result;
     }
 }
