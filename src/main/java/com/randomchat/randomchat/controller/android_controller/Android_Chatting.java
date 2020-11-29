@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.randomchat.randomchat.service.ChattingService;
 import com.randomchat.randomchat.service.MemberService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class Android_Chatting_Search {
+public class Android_Chatting {
     @Autowired
-    private MemberService memberservice;
+    private ChattingService chattingService;
 
     private final static String MAPPING = "Android_Chatting_";
     String user1 = null, menu1 = null, user2 = null, menu2 = null, menudump1 = null, menudump2 = null;
@@ -68,11 +69,21 @@ public class Android_Chatting_Search {
     //채팅 메인
     @RequestMapping(value = MAPPING + "main")
     @ResponseBody
-    public void Chatting(HttpServletRequest request){
-        String i,j;
-        i = request.getParameter("id");
-        j = request.getParameter("chat");
-        System.out.println(i);
-        System.out.println(j);
+    public Map<String, Object> Chatting(HttpServletRequest request) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        String ID;
+        String TIME;
+        String CHATTINGTIME;
+        ID = request.getParameter("ID");
+        TIME = request.getParameter("CHAT");
+        CHATTINGTIME = request.getParameter("TIME");
+        
+        result.put("ID", ID);
+        result.put("CHATTING", TIME);
+        result.put("CHATTINGTIME", CHATTINGTIME);
+
+        chattingService.InsertChatting(result);
+
+        return result;
     }
 }
