@@ -14,3 +14,4 @@ insert into ACCOUNT values('test13',2,'chatting13','test@test.com','male','testn
 insert into ACCOUNT values('test14',2,'chatting14','test@test.com','female','testname11','1234','010-2222-2222','dong2');
 insert into ACCOUNT values('test15',2,'chatting15','test@test.com','female','testname12','1234','010-2222-2222','dong2');
 insert into ACCOUNT values('test16',2,'chatting16','test@test.com','female','testname13','1234','010-2222-2222','dong2');
+insert into ACCOUNT values('test17',1,'chatting16','test@test.com','female','testname13','1234','010-2222-2222','dong2');
