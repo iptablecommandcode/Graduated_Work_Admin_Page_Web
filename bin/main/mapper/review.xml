@@ -5,4 +5,15 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="review">
+    <insert id="insert" parameterType="Map">
+	    insert into REVIEW (
+			ID,
+			CHATSCORE,
+			REVIEW
+			) VALUES (
+			#{ID},
+			#{CHATSCORE},
+			#{REVIEW}
+			)
+	</insert>
 </mapper>

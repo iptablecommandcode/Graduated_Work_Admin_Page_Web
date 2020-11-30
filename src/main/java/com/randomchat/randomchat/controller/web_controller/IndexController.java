@@ -42,7 +42,7 @@ public class IndexController {
         Object resultMap = new HashMap<String, Object>() ;
 
         // SIGN IN CHECK
-        loginID = (String) memberservice.SignIn(loginID, loginPW);
+        loginID = (String) memberservice.SignInAdmin(loginID, loginPW);
         
         if (loginID == null) {
             // Sign Fail

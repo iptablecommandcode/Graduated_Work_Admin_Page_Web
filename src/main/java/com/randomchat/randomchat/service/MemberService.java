@@ -13,8 +13,8 @@ public class MemberService {
     @Autowired
     private MemberDao dao;
     
-    public Object SignIn(String id, String password) {
-        final String sqlMapId = "member.login";
+    public Object SignInAdmin(String id, String password) {
+        final String sqlMapId = "member.loginadmin";
         final Map<String, String> dataMap = new HashMap<String, String>();
         dataMap.put("ID", id);
         dataMap.put("PASSWORD", password);
@@ -30,5 +30,12 @@ public class MemberService {
         final String sqlMapId = "member.signup";
 
         dao.insertList(sqlMapId, dataMap);
+    }
+    public Object SignInAndroid(String id, String password) {
+        final String sqlMapId = "member.loginandroid";
+        final Map<String, String> dataMap = new HashMap<String, String>();
+        dataMap.put("ID", id);
+        dataMap.put("PASSWORD", password);
+        return dao.getObject(sqlMapId, dataMap);
     }
 }

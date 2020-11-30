@@ -6,12 +6,20 @@
 
 <mapper namespace="member">
 
-	<select id="login" resultType="String" parameterType="Map">
+	<select id="loginadmin" resultType="String" parameterType="Map">
 		select ID
 		from ACCOUNT
 		where ID=#{ID}
 		and PASSWORD=#{PASSWORD}
 		and ADMIN=1;
+	</select>
+
+	<select id="loginandroid" resultType="String" parameterType="Map">
+		select ID
+		from ACCOUNT
+		where ID=#{ID}
+		and PASSWORD=#{PASSWORD}
+		and ADMIN=2;
 	</select>
 	
 	<delete id="delete" parameterType="Map">

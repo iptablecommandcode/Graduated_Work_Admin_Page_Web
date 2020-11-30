@@ -19,17 +19,23 @@ public class Android_Sign_In {
 
     @RequestMapping("AndroidSign_In")
     @ResponseBody
-    public Map<String, String> SignIn(HttpServletRequest request) {
-    Map<String, String> result = new HashMap<String, String>();
-    String test;
+    public Map<String, Object> SignIn(HttpServletRequest request) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        String ID, PASSWORD, Account_Check;
 
-    test = request.getParameter("id");
-    System.out.println(test);
-    test = request.getParameter("pw");
-    System.out.println(test);
+        // 안드로이드에서 가져온 값
+        ID = request.getParameter("id");
+        PASSWORD = request.getParameter("pw");
 
-    result.put("Sign_In", "true");
+        // DB확인
+        Account_Check = (String) memberservice.SignInAndroid(ID, PASSWORD);
 
-    return result;
+        // 결과값 없으면 로그인 실패있으면 성공
+        if (Account_Check == null)
+            result.put("Sign_In", "false");
+        else if (Account_Check != null)
+            result.put("Sign_In", "true");
+
+        return result;
     }
 }
