@@ -1,5 +1,4 @@
-# 대학 졸업작품 (웹)
-# Graduated_Work_Admin_Page_Web
+# Graduated_Work_Admin_Page_Web (대학 졸업작품 (Web))
 ## 사용 언어(프레임워크)
 HTML, BootStrap, Spring Boot, H2 DataBase, Mybatis, Thymeleaf
 ## 사용 프로그램(OS)
