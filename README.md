@@ -1,7 +1,7 @@
 # 대학 졸업작품 (웹)
 # Graduated_Work_Admin_Page_Web
 ## 사용 언어(프레임워크) : HTML, BootStrap, Spring Boot, H2 DataBase, Mybatis, Thymeleaf
-## 사용 프로그램(OS) : Linux(Db Server,Web Server), Window10(Develope), git, VisualStudio Code, JDK, Chrome
+## 사용 프로그램(OS) : Linux(Db Server,Web Server), Window10(Develope), git, VisualStudio Code, JDK(11.0.8), Chrome
 # 개발자(이메일)
 ### 박치원(iptablecommandcode@gmail.com)
 ### 이종운(dlwhddns5614@gmail.com)
