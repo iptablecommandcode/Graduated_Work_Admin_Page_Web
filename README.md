@@ -3,7 +3,7 @@
 HTML, BootStrap, Spring Boot, H2 DataBase, Mybatis, Thymeleaf
 ## 사용 프로그램(OS)
 Linux(Db Server,Web Server), Window10(Develope), git, VisualStudio Code, JDK(11.0.8), Chrome
-# 개발자(이메일)
+## 개발자(이메일)
 박치원(iptablecommandcode@gmail.com)<br>
 이종운(dlwhddns5614@gmail.com)<br>
 조상윤(chsyoon411@gmail.com)<br>
